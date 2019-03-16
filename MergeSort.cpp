@@ -13,15 +13,15 @@ class MergeSort{
 
 public:
 	MergeSort(int *arr) : _array(arr) {}
-	void merge_sort(int left, int right);
+	void merge_sort(const int left, const int right);
 
 private:
 	int *_array;
-	void merge(int *arr, int left, int mid, int right); //合并
-	void sort(int left, int right); //递归
+	void merge(int *arr, const int left, const int mid, const int right); //合并
+	void sort(const int left, const int right); //递归
 };
 
-void MergeSort::merge(int *arr, int left, int mid, int right){
+void MergeSort::merge(int *arr, const int left, const int mid, const int right){
 
 	int length1 = mid-left+1;
 	int length2 = right-mid;
@@ -49,7 +49,7 @@ void MergeSort::merge(int *arr, int left, int mid, int right){
 	delete[] R;
 }
 
-void MergeSort::sort(int left, int right){
+void MergeSort::sort(const int left, const int right){
 	if(left < right){
 		int mid = (left+right) / 2;
 		sort(left, mid);
@@ -58,7 +58,7 @@ void MergeSort::sort(int left, int right){
 	}
 }
 
-void MergeSort::merge_sort(int left, int right){
+void MergeSort::merge_sort(const int left, const int right){
 	sort(left, right);
 	for(int i=left; i<right; i++)
 		cout << _array[i] << endl;
