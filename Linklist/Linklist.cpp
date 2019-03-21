@@ -44,7 +44,7 @@ void Linklist::create_linklist(ElemType n, const int size){
 		tmp->next = p;
 		tmp = p;
 	}
-	tmp->next = nullptr; //尾结点指向nullptr
+//	tmp->next = nullptr; //尾结点指向nullptr
 }
 
 void Linklist::print(const int size){
