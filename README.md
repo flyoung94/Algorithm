@@ -13,4 +13,9 @@
 - 链表求环（leetcode-141 & 142）
 - 链表的深度拷贝（leetcode-138） 
 
+### Others
 
+- 归并排序：   MergeSort.cpp
+- 快速排序：   Quicksort.cpp
+- 二叉搜索树： BSTree.cpp
+- 0-1背包问题：Pack_binary.cpp
