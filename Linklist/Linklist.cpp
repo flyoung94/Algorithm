@@ -32,7 +32,9 @@ Linklist::Linklist(){
 	L = new(LNode);
 	L->data = 0;
 	L->next = nullptr;
-} Linklist::~Linklist(){
+} 
+
+Linklist::~Linklist(){
 	delete L;
 }
 
