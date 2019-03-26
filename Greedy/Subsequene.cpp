@@ -6,6 +6,11 @@
  * Author: xblin
  */
 
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 class Solution {
 public:
     int wiggleMaxLength(vector<int>& nums) {
@@ -19,14 +24,35 @@ public:
 																        for(int i=0; i<nums.size()-1;i++){
 			switch(Status){
 				case Begin: {
+					if(nums[i+1] > nums[i]){
+						lenth++;
+						Status = Up;
+					}
+					else if(nums[i+1] < nums[i]){
+						lenth++;
+						Status = Down;
+					}
+					else
+						Status = Begin;
 				
 				} break;
 
-				case Up: {
+				case Up: { 
+					if(nums[i+1] < nums[i]) {
+						lenth++;
+						Status = Down;
+					}
+					else
+						Status = Up;
 				
 				} break;
 				case Down: {
-				
+					if(nums[i+1] > nums[i]){
+						lenth++;
+						Status = Up;
+					}
+					else
+						Status = Down;
 				} break;
 			}
 		}
@@ -34,3 +60,13 @@ public:
 		return lenth;
 	}
 };
+
+
+int main(int argc, char *argv[]){
+
+	std::vector<int> nums = {1,17,6,5,7,1};
+	Solution solve;
+	cout << solve.wiggleMaxLength(nums) << endl;
+
+	return 0;
+}
