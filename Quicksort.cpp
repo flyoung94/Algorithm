@@ -1,47 +1,67 @@
+/* quicksort.cpp
+ *
+ * Author: xblin
+ */
 
 #include <iostream>
+#include <vector>
+#include <typeinfo>
+
 
 using namespace std;
 
-class Quicksort{
+class QuickSort{
 
 public:
-	Quicksort(int *arr) : _array(arr) {}
-	int part(const int left, const int right);
-	void sort(int left, int right);
-
-
+	QuickSort(const vector<int> &array) : _array(array) {}
+	const int part(const int left, const int right);	
+	void quicksort(const int left, const int right);
+//	ostream &operator << (ostream &os);
 
 private:
-	int *_array;
+	vector<int>	_array;
+	friend ostream &operator << (ostream &os, const QuickSort &q);
+	
 
 };
 
-int Quicksort::part(const int left, const int right){
-	
-	int base = _array[right];
+const int QuickSort::part(int left, int right){
 
-	int ptr = left;
-	
-	for(int i=left; i<right; i++){
-		if( _array[i] < base){
-			std::swap(_array[i], _array[ptr++]);
+	int base = _array[right];	
+	int base_ptr(left);  //must left, not 0;
+
+	for(int i=left; i<right+1; i++){
+		if(_array[i] < base){
+			std::swap(_array[i], _array[base_ptr++]);
 		}
 	}
+	std::swap(_array[base_ptr], _array[right]);
 
-	std::swap(_array[ptr], _array[right]);
-
-	return ptr;
+	return base_ptr;
 }
 
-
-void Quicksort::sort(int left, int right){
-
+void QuickSort::quicksort(const int left, const int right){
 	if(left < right){
+	
 		int base = part(left, right);
-		sort(left, base-1);
-		sort(base+1, right);
+		quicksort(left, base-1);
+		quicksort(base+1, right);
 	}
 }
 
-void
+ostream &operator << (ostream &os, const QuickSort &q){
+
+	for(auto elem : q._array)
+		os << elem;
+	return os;
+} 
+
+int main(int argc, char *argv[]){ 
+	vector<int> array = {2,8,7,1,3,5,6,4};
+
+	QuickSort q(array);
+	q.quicksort(0,7);
+	cout << q << endl;
+
+	return 0;
+}
