@@ -1,6 +1,5 @@
 # Algorithm
 
-
 ### 单链表(Linklist)： 
 
 - 前向建立表
@@ -20,8 +19,15 @@
 
 ### 队列（队尾插入，对头弹出） & 优先级队列（堆）
 
+- 栈实现队列(CQueue.cpp)
 - 数组中第k大的数
 - 寻找中位数（leetcode-295）
+
+
+### 字符串匹配 (String)
+
+- 字符串原址替换(tr.cpp)
+- 排序矩阵的查找(find_arr.cpp)
 
 ### Others
 
