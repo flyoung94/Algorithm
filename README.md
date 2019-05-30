@@ -1,8 +1,9 @@
----
-date: 2019-05-27 18:48
-status: public
-title: ç§‹æ‹›é¢è¯•
----
+<div align="center">
+í ½í³˜ Summary
+&emsp;&emsp; | &emsp;&emsp;
+í ½í³– Details</a>
+</div> 
+<br>
 
  <b><details><summary> C++</summary></b>
  
