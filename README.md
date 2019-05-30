@@ -25,7 +25,7 @@ title: 秋招面试
 
 1.`cin.getline(char *, size)`；
 2.`getline(cin, string)`；
-3.`xxx.find(";")`;
+3.`xxx.find(";")`；
 4.`xxx.substr(0,nPos)`。
 
 #### 使用
