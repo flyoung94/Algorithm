@@ -1,7 +1,7 @@
 <div align="center">
-í ½í³˜ Summary
+Summary
 &emsp;&emsp; | &emsp;&emsp;
-í ½í³– Details</a>
+Details</a>
 </div> 
 <br>
 
